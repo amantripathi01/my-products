@@ -1,0 +1,100 @@
+{
+  "test_name": "Configure and Verify RoostGPT Testing Parameters",
+  "description": "This scenario tests the ability of a user to configure testing parameters in the RoostGPT form and verify the configuration.",
+  "type": "configuration",
+  "pages": [
+    "https://dev.roost.ai/gptCLIForm"
+  ],
+  "steps": [
+    "Navigate to the RoostGPT Config page.",
+    "Locate the Roost Token input field.",
+    "Type a valid Roost Token into the input field.",
+    "Select 'Unit Test' from the Test Type dropdown.",
+    "Select 'Java' from the Code Language dropdown.",
+    "Select 'JUnit5' from the Test Framework dropdown.",
+    "Select 'Java SE 21(Default)' from the Java Version dropdown.",
+    "Select 'Maven' from the Java Build Tool dropdown.",
+    "Select 'Maven 3.8.6 (Default)' from the Maven Version dropdown.",
+    "Locate and click the Verify button.",
+    "Observe any confirmation or error messages.",
+    "Ensure the test configuration is saved and accurately reflected in the UI.",
+    "Verify that no error messages are displayed on incorrect inputs.",
+    "Check the persistence of settings by refreshing the page.",
+    "Re-confirm the configuration is correctly saved."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "//div[@id='roostToken']/div[2]/div/div[2]/div/input",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid=\"openai-token-unMask-icon\"]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    }
+  ],
+  "expected_results": [
+    "All selected options are saved and displayed correctly.",
+    "Verification succeeds with a valid configuration.",
+    "No error messages appear for valid inputs."
+  ],
+  "edge_cases": [
+    "Entering an invalid Roost Token.",
+    "Leaving the Roost Token field empty.",
+    "Selecting an unsupported combination of Java Version and Test Framework.",
+    "Attempting to verify without filling mandatory fields.",
+    "Network disconnection during verification."
+  ],
+  "data_requirements": [
+    "Valid Roost Token",
+    "Test Type as 'Unit Test'",
+    "Code Language as 'Java'",
+    "Test Framework as 'JUnit5'",
+    "Java Version as 'Java SE 21(Default)'"
+  ],
+  "dependencies": [
+    "User is logged into the platform.",
+    "The RoostGPT Config page is accessible.",
+    "Server-side validation for Roost Token is operational."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "Verification API for test configuration.",
+    "API to save test settings."
+  ],
+  "performance_metrics": [
+    "Response time for verification.",
+    "Time taken to save configurations."
+  ],
+  "accessibility_requirements": [
+    "All form fields should be focusable via keyboard.",
+    "Screen reader compatibility for dropdown selections."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "72f595cb-a954-46af-a380-a5929f266981",
+    "created_at": "2025-09-04T12:36:42.684730Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "configuration",
+      "drag-and-drop",
+      "error-handling",
+      "form-submission",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "high"
+  }
+}

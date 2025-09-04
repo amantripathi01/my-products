@@ -1,0 +1,81 @@
+{
+  "test_name": "Ensure Proper Functionality of External API Links",
+  "description": "This scenario tests the functionality and accessibility of external links provided in the API documentation page.",
+  "type": "navigation",
+  "pages": [
+    "https://dev.roost.ai/docs/api"
+  ],
+  "steps": [
+    "Navigate to the API documentation page at 'https://dev.roost.ai/docs/api'.",
+    "Identify the external link to Swagger API documentation.",
+    "Click on the external link to verify it opens in a new tab.",
+    "Ensure the new tab loads the Swagger API documentation page correctly.",
+    "Check that the link provides the correct and expected content.",
+    "Verify the presence of a return link to the original documentation page.",
+    "Close the tab and return to the API documentation page.",
+    "Check that the original page state is maintained after returning."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://dev.roost.ai/api/swagger' and contains(@class, 'roost-icon')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/docs/api"
+    }
+  ],
+  "expected_results": [
+    "External links open in a new tab and load the intended content.",
+    "Users can navigate back to the original page without loss of state."
+  ],
+  "edge_cases": [
+    "External link is broken or leads to an error page.",
+    "New tab fails to load the Swagger documentation.",
+    "User is unable to return to the original page easily.",
+    "Content of the external page does not match expectations.",
+    "Browser settings prevent opening links in a new tab."
+  ],
+  "data_requirements": [
+    "Stable internet connection for loading external pages.",
+    "Browser settings that allow opening links in new tabs.",
+    "Correct configuration of external URLs.",
+    "Access rights to external documentation pages.",
+    "Browser with multiple tab support."
+  ],
+  "dependencies": [
+    "External links must be correctly configured.",
+    "External documentation pages must be accessible.",
+    "Browser compatibility with external links."
+  ],
+  "complexity": "low",
+  "api_interactions": [
+    "Monitor any redirect or API calls triggered by clicking the link."
+  ],
+  "performance_metrics": [
+    "Measure time taken to load external pages."
+  ],
+  "accessibility_requirements": [
+    "Ensure external pages also meet basic accessibility standards."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "a4d52d3f-58c3-4d12-9845-aea902101aac",
+    "created_at": "2025-09-04T12:36:42.684563Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "cross-browser",
+      "error-handling",
+      "keyboard-navigation",
+      "navigation",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 40,
+    "flakiness_potential": "medium"
+  }
+}

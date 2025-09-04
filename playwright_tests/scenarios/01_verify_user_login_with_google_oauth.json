@@ -1,0 +1,87 @@
+{
+  "test_name": "Verify User Login with Google OAuth",
+  "description": "This scenario tests the user login functionality using Google OAuth. It verifies the successful login and redirection to the user's dashboard.",
+  "type": "authentication",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "Navigate to https://dev.roost.ai/login.",
+    "Locate and click on the 'Sign in with Google' link.",
+    "Enter a valid Google email address in the Google login page.",
+    "Enter the associated password and submit.",
+    "Complete any required two-factor authentication steps.",
+    "Ensure redirection to the primary dashboard at https://dev.roost.ai.",
+    "Verify the user's name or profile picture is displayed on the dashboard, indicating a successful login."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile%20openid&openid.realm&include_granted_scopes=true&response_type=token&client_id=985988082020-h5fipp07abkqn9qer08dtc6ve33dan9i.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'google')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to Google login page.",
+    "User successfully logs in with Google credentials.",
+    "User is redirected to https://dev.roost.ai.",
+    "User's profile is displayed on the dashboard."
+  ],
+  "edge_cases": [
+    "Google account does not have email verified.",
+    "User cancels two-factor authentication.",
+    "Incorrect password entered for Google account.",
+    "Network failure during redirection.",
+    "Google account is locked."
+  ],
+  "data_requirements": [
+    "Valid Google account credentials.",
+    "Two-factor authentication setup on the Google account.",
+    "Stable internet connection.",
+    "Access to the primary dashboard URL after login.",
+    "Email verification enabled for the Google account."
+  ],
+  "dependencies": [
+    "Google OAuth configuration on the platform.",
+    "Functioning Google login page.",
+    "Active Google account with valid credentials."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Google OAuth token exchange.",
+    "User profile retrieval upon successful login."
+  ],
+  "performance_metrics": [
+    "Time taken for redirection to dashboard.",
+    "Response time for Google OAuth API calls."
+  ],
+  "accessibility_requirements": [
+    "Ensure login elements are accessible via keyboard.",
+    "Verify screen reader compatibility on login page.",
+    "Check color contrast for login links."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "3d5a7c47-6d29-4765-8c0f-9289c77a3bdf",
+    "created_at": "2025-09-04T12:36:42.683883Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "error-handling",
+      "file-upload",
+      "form-submission",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "high"
+  }
+}

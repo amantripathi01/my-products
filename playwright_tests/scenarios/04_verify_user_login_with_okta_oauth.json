@@ -1,0 +1,87 @@
+{
+  "test_name": "Verify User Login with Okta OAuth",
+  "description": "This scenario tests logging in using Okta OAuth and confirms that the user is directed to the dashboard following successful authentication.",
+  "type": "authentication",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "Open https://dev.roost.ai/login in a browser.",
+    "Find and click on the 'Sign in with Okta' link.",
+    "Enter Okta account credentials on the Okta login page.",
+    "Submit the login form.",
+    "If prompted, complete the two-factor authentication.",
+    "Verify redirection to the dashboard at https://dev.roost.ai.",
+    "Ensure the user's profile is displayed, confirming login success."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://dev-53854943.okta.com/oauth2/default/v1/authorize?response_type=code&scope=openid%20profile%20email%20address&state=okta&client_id=0oa3x8katznHWlHeD5d7&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'okta')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is directed to Okta login page.",
+    "Successful login with Okta credentials.",
+    "Redirected to the dashboard at https://dev.roost.ai.",
+    "User profile is visible on the dashboard."
+  ],
+  "edge_cases": [
+    "User cancels Okta login process.",
+    "Incorrect Okta credentials entered.",
+    "Two-factor authentication is required but not completed.",
+    "Okta service is experiencing downtime.",
+    "User's Okta account lacks necessary permissions."
+  ],
+  "data_requirements": [
+    "Valid Okta credentials.",
+    "Two-factor authentication setup on Okta.",
+    "Internet access for OAuth redirection.",
+    "Okta account with access permissions.",
+    "Account not disabled or inactive."
+  ],
+  "dependencies": [
+    "Okta OAuth integration with Roost.ai.",
+    "Operational Okta login and authentication services.",
+    "User's valid Okta account."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Okta OAuth token exchange.",
+    "Fetch user profile data after login."
+  ],
+  "performance_metrics": [
+    "Time for redirection to Okta and back.",
+    "Dashboard loading performance post-login."
+  ],
+  "accessibility_requirements": [
+    "Ensure OAuth links can be accessed via keyboard.",
+    "Screen reader compatibility for Okta login page.",
+    "Check for adequate color contrast for usability."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "5d346798-af0b-4646-8880-8478312d6bed",
+    "created_at": "2025-09-04T12:36:42.684243Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "cross-browser",
+      "file-upload",
+      "form-submission",
+      "performance",
+      "security",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "medium"
+  }
+}

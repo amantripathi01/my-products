@@ -1,0 +1,91 @@
+{
+  "test_name": "Verify User Login with Google Integration",
+  "description": "This test verifies that a user can successfully log into the Roost Enterprise platform using the Google integration option.",
+  "type": "authentication",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "Navigate to the login page at https://dev.roost.ai/login.",
+    "Verify the presence of the Google sign-in button.",
+    "Click on the Google sign-in button.",
+    "Redirect to Google's authentication page.",
+    "Enter valid Google credentials (email and password).",
+    "Submit the Google login form.",
+    "Wait for redirection back to the Roost Enterprise dashboard.",
+    "Verify that the user is successfully logged in by checking for a welcome message or user profile icon.",
+    "Log out of the Roost Enterprise platform.",
+    "Verify that the user is redirected back to the login page."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile%20openid&openid.realm&include_granted_scopes=true&response_type=token&client_id=985988082020-h5fipp07abkqn9qer08dtc6ve33dan9i.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'google')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to Google's authentication page.",
+    "User is successfully authenticated and redirected back to the Roost Enterprise dashboard.",
+    "User session is active, and user-specific elements are visible."
+  ],
+  "edge_cases": [
+    "Invalid Google credentials are entered.",
+    "Google authentication page fails to load.",
+    "Redirection back to the Roost Enterprise dashboard fails.",
+    "User session is not established after login.",
+    "Network issues during Google sign-in attempt."
+  ],
+  "data_requirements": [
+    "Valid Google account credentials.",
+    "Access to the Roost Enterprise platform.",
+    "Network connection with access to Google services.",
+    "Roost Enterprise user profile associated with the Google account.",
+    "Browser compatibility with Google authentication."
+  ],
+  "dependencies": [
+    "Google authentication service availability.",
+    "Roost Enterprise backend availability.",
+    "User must have a pre-existing Roost account linked to Google.",
+    "Stable internet connection.",
+    "Browser cookies and cache are enabled."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "OAuth2 token exchange between Roost and Google."
+  ],
+  "performance_metrics": [
+    "Time taken to load the Google authentication page.",
+    "Time taken to authenticate and redirect back to the dashboard."
+  ],
+  "accessibility_requirements": [
+    "Ensure Google login button is accessible via keyboard navigation.",
+    "Verify screen reader compatibility with the login page.",
+    "Contrast ratios for readability on the login page."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "c356b4ab-d379-4dbc-a71b-f6d97c3fb54a",
+    "created_at": "2025-09-04T12:36:42.685396Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "error-handling",
+      "file-upload",
+      "form-submission",
+      "keyboard-navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 50,
+    "flakiness_potential": "high"
+  }
+}
