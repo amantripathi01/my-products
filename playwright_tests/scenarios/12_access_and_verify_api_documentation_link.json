@@ -1,0 +1,89 @@
+{
+  "test_name": "Access and Verify API Documentation Link",
+  "description": "This test verifies that a user can access the API Documentation page from the login page and it loads correctly.",
+  "type": "navigation",
+  "pages": [
+    "https://dev.roost.ai/login",
+    "https://docs.roost.ai"
+  ],
+  "steps": [
+    "Navigate to the login page at https://dev.roost.ai/login.",
+    "Scroll down to the footer section.",
+    "Verify the presence of the 'Documentation' link.",
+    "Click on the 'Documentation' link.",
+    "Wait for the redirection to the API Documentation page.",
+    "Verify that the API Documentation page loads successfully.",
+    "Check for the presence of introductory content on the API Documentation page.",
+    "Verify the availability of search functionality on the documentation page.",
+    "Navigate back to the login page.",
+    "Ensure the footer items reappear upon returning to the login page."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://docs.roost.ai' and contains(@class, 'footer-item')]",
+      "text": "Documentation",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to the API Documentation page.",
+    "API Documentation page loads correctly with all content visible.",
+    "Functional search is available on the documentation page."
+  ],
+  "edge_cases": [
+    "Documentation link is broken.",
+    "Network issues cause the documentation page to not load.",
+    "Documentation content fails to render properly.",
+    "Search functionality is not operational.",
+    "User is unable to navigate back to the login page."
+  ],
+  "data_requirements": [
+    "Access to the internet to load external documentation.",
+    "Valid URL for API documentation.",
+    "Browser compatibility with documentation site.",
+    "Network stability for seamless page loading.",
+    "User permissions to access documentation content."
+  ],
+  "dependencies": [
+    "Documentation server availability.",
+    "Roost Enterprise platform availability.",
+    "Network connection.",
+    "Browser with JavaScript enabled.",
+    "Proper redirection set up from login page to documentation."
+  ],
+  "complexity": "low",
+  "api_interactions": [
+    "No direct API interactions; focus is on navigation."
+  ],
+  "performance_metrics": [
+    "Page load time for the documentation site.",
+    "Responsiveness of the search functionality."
+  ],
+  "accessibility_requirements": [
+    "Ensure footer links are accessible via keyboard navigation.",
+    "Verify screen reader compatibility on both login and documentation pages.",
+    "Check for appropriate contrast ratios on the documentation page."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "139d38aa-2603-47b9-abb6-ecd969c9f216",
+    "created_at": "2025-09-04T12:36:42.685505Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 50,
+    "flakiness_potential": "high"
+  }
+}

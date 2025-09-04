@@ -1,0 +1,86 @@
+{
+  "test_name": "Verify User Login with Microsoft Azure OAuth",
+  "description": "This test scenario ensures the completion of login using Microsoft Azure OAuth and checks for user redirection to the dashboard upon successful login.",
+  "type": "authentication",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "Launch the login page at https://dev.roost.ai/login.",
+    "Click on the 'Sign in with Microsoft' link.",
+    "Enter Microsoft account email on the login page.",
+    "Submit the password and proceed.",
+    "Complete the Microsoft multi-factor authentication if prompted.",
+    "Verify redirection to https://dev.roost.ai.",
+    "Check for user profile visibility on the dashboard."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&scope=user.read&state=azure&client_id=946156a9-5142-4469-b79f-bdcc9e76cf7f&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'azure')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "Successful redirection to Microsoft login page.",
+    "User logs in with valid Microsoft credentials.",
+    "Successful redirection back to https://dev.roost.ai.",
+    "User's profile is shown on the dashboard."
+  ],
+  "edge_cases": [
+    "Microsoft account requires additional authentication.",
+    "User enters incorrect Microsoft credentials.",
+    "User cancels login midway.",
+    "Microsoft OAuth service is down.",
+    "Account is not linked with required permissions."
+  ],
+  "data_requirements": [
+    "Microsoft account credentials.",
+    "Multi-factor authentication setup on Microsoft.",
+    "Stable internet connection.",
+    "Microsoft account with permission to sign in.",
+    "Account is not locked or suspended."
+  ],
+  "dependencies": [
+    "Microsoft OAuth setup for Roost.ai.",
+    "Access to Microsoft login and authentication pages.",
+    "Active and valid Microsoft account."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Microsoft OAuth token retrieval.",
+    "User data fetch after login."
+  ],
+  "performance_metrics": [
+    "Response time for OAuth redirection.",
+    "Dashboard loading time post-login."
+  ],
+  "accessibility_requirements": [
+    "Keyboard navigation for OAuth links.",
+    "Screen reader support on login page.",
+    "Contrast checks for OAuth button text."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "1cbc316d-bec8-47e3-a7e0-15cde08aa836",
+    "created_at": "2025-09-04T12:36:42.684144Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "file-upload",
+      "form-submission",
+      "performance",
+      "security",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "medium"
+  }
+}

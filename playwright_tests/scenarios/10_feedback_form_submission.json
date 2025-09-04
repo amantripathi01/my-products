@@ -1,0 +1,91 @@
+{
+  "test_name": "Feedback Form Submission",
+  "description": "This scenario tests the submission of feedback using the feedback form on the RoostGPT Config page.",
+  "type": "feedback",
+  "pages": [
+    "https://dev.roost.ai/gptCLIForm"
+  ],
+  "steps": [
+    "Navigate to the RoostGPT Config page.",
+    "Locate the Feedback form textarea.",
+    "Type feedback comments into the textarea.",
+    "Ensure the feedback is clear and complete.",
+    "Locate the Submit button for the feedback form.",
+    "Click the Submit button.",
+    "Observe any confirmation message indicating feedback submission.",
+    "Verify that the feedback submission does not trigger any errors.",
+    "Check the textarea clears after submission.",
+    "Attempt to submit feedback with an empty textarea.",
+    "Verify submission with a very long feedback text.",
+    "Test feedback submission under slow network conditions.",
+    "Check feedback submission with special characters.",
+    "Refresh the page and verify feedback form resets correctly.",
+    "Validate error handling for server-side issues during submission."
+  ],
+  "selectors": [
+    {
+      "element_type": "textarea",
+      "selector": "[data-testid=\"Feedback-form\"]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    }
+  ],
+  "expected_results": [
+    "Feedback is submitted successfully.",
+    "Confirmation message appears post submission.",
+    "No errors occur during submission."
+  ],
+  "edge_cases": [
+    "Submitting feedback with an empty textarea.",
+    "Inclusion of special characters in feedback.",
+    "Network disconnection during submission.",
+    "Server error response during submission.",
+    "Submitting extremely long feedback."
+  ],
+  "data_requirements": [
+    "Valid feedback content",
+    "Network connectivity",
+    "Feedback submission endpoint availability",
+    "User session active"
+  ],
+  "dependencies": [
+    "Feedback form is accessible.",
+    "Feedback submission service is operational.",
+    "User is logged in to submit feedback."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "API endpoint for feedback submission."
+  ],
+  "performance_metrics": [
+    "Time taken for feedback submission.",
+    "Response time for confirmation message."
+  ],
+  "accessibility_requirements": [
+    "Textarea should be focusable by keyboard.",
+    "Submit button should be accessible via screen readers."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "61fdf12f-8cb7-4e96-a0c5-38b2451d65e4",
+    "created_at": "2025-09-04T12:36:42.685217Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "data-validation",
+      "error-handling",
+      "feedback",
+      "form-submission",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "high"
+  }
+}

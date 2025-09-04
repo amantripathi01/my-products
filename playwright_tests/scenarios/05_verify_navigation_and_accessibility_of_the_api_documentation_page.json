@@ -1,0 +1,89 @@
+{
+  "test_name": "Verify Navigation and Accessibility of the API Documentation Page",
+  "description": "This scenario tests the user's ability to navigate to the API documentation page and verify its accessibility features.",
+  "type": "navigation",
+  "pages": [
+    "https://dev.roost.ai/docs/api"
+  ],
+  "steps": [
+    "Open the browser and navigate to the homepage 'https://dev.roost.ai'.",
+    "Locate the 'roost.ai' logo link on the homepage.",
+    "Click on the 'roost.ai' logo link that leads to the API documentation page.",
+    "Verify that the page has navigated to 'https://dev.roost.ai/docs/api'.",
+    "Check the presence of the API documentation title on the page.",
+    "Scroll through the documentation to ensure all sections are visible.",
+    "Verify that each section is properly tagged with appropriate ARIA roles.",
+    "Ensure the documentation is navigable using keyboard shortcuts.",
+    "Check for the presence of alternative text for all images and icons.",
+    "Validate the color contrast of text against the background.",
+    "Ensure that all interactive elements are accessible via tab navigation."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='/docs/api' and contains(@class, 'logo')]",
+      "text": "roost.ai",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai"
+    }
+  ],
+  "expected_results": [
+    "User successfully navigates to the API documentation page.",
+    "All sections of the documentation are visible and accessible.",
+    "Page complies with accessibility standards (WCAG 2.1)."
+  ],
+  "edge_cases": [
+    "User clicks the link, but the page fails to load due to network issues.",
+    "Accessibility tools are unable to read some sections of the documentation.",
+    "Color contrast is not sufficient for visually impaired users.",
+    "Keyboard navigation skips certain sections or elements.",
+    "Images or icons lack alternative text descriptions."
+  ],
+  "data_requirements": [
+    "Valid URL for the homepage.",
+    "Stable internet connection to access the web page.",
+    "Accessibility tools for testing compliance.",
+    "Screen reader software for accessibility verification.",
+    "Browser with developer tools enabled."
+  ],
+  "dependencies": [
+    "Homepage must be accessible and correctly configured.",
+    "Navigation links must be properly set up.",
+    "Accessibility features must be implemented in the page design."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Monitor API calls to load the documentation page."
+  ],
+  "performance_metrics": [
+    "Page load time should be under 3 seconds.",
+    "Ensure smooth scrolling without lag."
+  ],
+  "accessibility_requirements": [
+    "Compliance with WCAG 2.1 standards.",
+    "Screen reader compatibility.",
+    "Keyboard navigability for all sections."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "dea770a1-9e42-44ca-be8d-c1139afedad7",
+    "created_at": "2025-09-04T12:36:42.684424Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "cross-browser",
+      "data-validation",
+      "keyboard-navigation",
+      "navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 55,
+    "flakiness_potential": "high"
+  }
+}

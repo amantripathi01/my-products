@@ -1,0 +1,91 @@
+{
+  "test_name": "Verify Login Access with Microsoft Integration",
+  "description": "This scenario tests the user login functionality using Microsoft OAuth integration on the Roost Enterprise platform.",
+  "type": "authentication",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "Navigate to the login page at https://dev.roost.ai/login.",
+    "Locate and verify the presence of the Microsoft sign-in button.",
+    "Click on the Microsoft sign-in button.",
+    "Redirect to Microsoft's authentication page.",
+    "Enter valid Microsoft account credentials.",
+    "Submit the Microsoft login form.",
+    "Observe the redirection back to Roost Enterprise dashboard.",
+    "Verify the user is logged in by checking for user profile elements.",
+    "Log out from the Roost platform.",
+    "Ensure the user is redirected back to the login page post logout."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&scope=user.read&state=azure&client_id=946156a9-5142-4469-b79f-bdcc9e76cf7f&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'azure')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User reaches Microsoft's authentication page.",
+    "Successful login redirects user to the Roost dashboard.",
+    "User session is active and profile details are visible."
+  ],
+  "edge_cases": [
+    "Invalid Microsoft credentials.",
+    "Timeout during Microsoft authentication.",
+    "Roost session not established post login.",
+    "Redirection failure post Microsoft authentication.",
+    "Network interruptions during login."
+  ],
+  "data_requirements": [
+    "Valid Microsoft account credentials.",
+    "Linked Roost account with Microsoft.",
+    "Stable internet connection.",
+    "Browser compatibility with Microsoft login.",
+    "Proper configuration for Microsoft OAuth."
+  ],
+  "dependencies": [
+    "Microsoft authentication service availability.",
+    "Roost platform backend operational.",
+    "Network connection.",
+    "Browser cookies and cache enabled.",
+    "Proper OAuth configuration between Microsoft and Roost."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "OAuth2 token exchange between Roost and Microsoft."
+  ],
+  "performance_metrics": [
+    "Time taken to load Microsoft's authentication page.",
+    "Redirection speed back to Roost dashboard."
+  ],
+  "accessibility_requirements": [
+    "Ensure Microsoft login button is keyboard navigable.",
+    "Verify screen reader compatibility with login page.",
+    "Check contrast ratios for login page elements."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "526e69e0-cbe4-4b0b-8ad9-3a5d143167a2",
+    "created_at": "2025-09-04T12:36:42.685607Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "error-handling",
+      "file-upload",
+      "form-submission",
+      "keyboard-navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 50,
+    "flakiness_potential": "high"
+  }
+}

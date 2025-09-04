@@ -1,0 +1,87 @@
+{
+  "test_name": "Verify Navigation to Privacy Policy",
+  "description": "This scenario ensures that users can access the Privacy Policy page from the login page and that it displays correctly.",
+  "type": "navigation",
+  "pages": [
+    "https://dev.roost.ai/login",
+    "https://roost.ai/privacy-policy"
+  ],
+  "steps": [
+    "Navigate to the login page at https://dev.roost.ai/login.",
+    "Scroll to the footer section.",
+    "Verify the presence of the 'Privacy Policy' link.",
+    "Click on the 'Privacy Policy' link.",
+    "Check that the Privacy Policy page loads correctly.",
+    "Verify the content of the Privacy Policy page is visible and readable.",
+    "Check for any multimedia content (e.g., videos or infographics) on the Privacy Policy page.",
+    "Navigate back to the login page.",
+    "Ensure the footer section is visible upon return to the login page."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://roost.ai/privacy-policy' and contains(@class, 'footer-item')]",
+      "text": "Privacy Policy",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to the Privacy Policy page.",
+    "Privacy Policy content is loaded and visible.",
+    "Navigation back to the login page is successful."
+  ],
+  "edge_cases": [
+    "Privacy Policy link is broken or incorrect.",
+    "Network issues prevent page loading.",
+    "Privacy Policy content fails to render.",
+    "Multimedia content does not load.",
+    "Navigation back to the login page fails."
+  ],
+  "data_requirements": [
+    "Access to the internet.",
+    "Valid Privacy Policy URL.",
+    "Browser compatibility with Privacy Policy site.",
+    "Network stability for page loading.",
+    "User permissions to view Privacy Policy content."
+  ],
+  "dependencies": [
+    "Privacy Policy server availability.",
+    "Roost platform operational.",
+    "Network connection.",
+    "JavaScript enabled in browser.",
+    "Accurate redirection setup from login to Privacy Policy."
+  ],
+  "complexity": "low",
+  "api_interactions": [
+    "None; focus is on page navigation."
+  ],
+  "performance_metrics": [
+    "Page load time for Privacy Policy site."
+  ],
+  "accessibility_requirements": [
+    "Ensure all footer links are keyboard accessible.",
+    "Verify screen reader compatibility with Privacy Policy page.",
+    "Check for contrast ratios on the Privacy Policy page."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "830c3c1d-c23e-490a-b10e-92816e1de97a",
+    "created_at": "2025-09-04T12:36:42.685730Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 45,
+    "flakiness_potential": "high"
+  }
+}

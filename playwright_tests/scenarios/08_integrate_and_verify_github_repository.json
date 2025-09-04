@@ -1,0 +1,99 @@
+{
+  "test_name": "Integrate and Verify GitHub Repository",
+  "description": "This scenario tests the integration of a GitHub repository into the RoostGPT platform and verifies the integration.",
+  "type": "integration",
+  "pages": [
+    "https://dev.roost.ai/gptCLIForm"
+  ],
+  "steps": [
+    "Navigate to the RoostGPT Config page.",
+    "Locate the Github Token input field.",
+    "Type a valid Github Token into the input field.",
+    "Select 'Cloud' from the Github Type options.",
+    "Locate the Verify button next to the Github Token input.",
+    "Click the Verify button to validate the token.",
+    "Observe the confirmation message indicating successful integration.",
+    "Verify that the repository integration is visible in the UI.",
+    "Check for error messages on incorrect token input.",
+    "Ensure the token is masked while typing.",
+    "Attempt integration with an expired token.",
+    "Validate error handling for network issues during verification.",
+    "Refresh the page to ensure persistence of integration settings.",
+    "Verify integration using different GitHub account tokens.",
+    "Check the UI updates correctly post verification."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "[data-testid=\"github-source-token\"]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid=\"github-source-token-unMask-icon\"]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    }
+  ],
+  "expected_results": [
+    "GitHub repository is successfully integrated.",
+    "Verification succeeds with a valid token.",
+    "Error messages are displayed for invalid tokens."
+  ],
+  "edge_cases": [
+    "Using an invalid GitHub Token.",
+    "Leaving the GitHub Token field empty.",
+    "Network failure during token verification.",
+    "Attempting to verify with an expired token.",
+    "Selecting 'Enterprise (self hosted)' without proper setup."
+  ],
+  "data_requirements": [
+    "Valid GitHub Token",
+    "Repository access permissions",
+    "Network connectivity",
+    "GitHub account details"
+  ],
+  "dependencies": [
+    "GitHub API is operational.",
+    "User has necessary permissions on the repository.",
+    "Platform supports current GitHub API version."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "GitHub API for token verification.",
+    "API to save integration settings."
+  ],
+  "performance_metrics": [
+    "Time to verify GitHub token.",
+    "UI update speed post verification."
+  ],
+  "accessibility_requirements": [
+    "Token input should be accessible via screen readers.",
+    "Verify button should be focusable and operable via keyboard."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "3b855cfa-fd65-4c48-9f5b-a381c72bc1ef",
+    "created_at": "2025-09-04T12:36:42.684911Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "data-validation",
+      "error-handling",
+      "form-submission",
+      "integration",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "high"
+  }
+}
