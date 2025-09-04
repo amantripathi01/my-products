@@ -1,0 +1,89 @@
+{
+  "test_name": "Test Multilingual Support in Chatbot",
+  "description": "This scenario verifies the chatbot's ability to support and respond in multiple languages.",
+  "type": "localization",
+  "pages": [
+    "https://dev.roost.ai/roostgpt"
+  ],
+  "steps": [
+    "Navigate to https://dev.roost.ai/roostgpt.",
+    "Log in using any available OAuth option.",
+    "Initiate a conversation by entering a query in English.",
+    "Observe the chatbot's response in English.",
+    "Switch language to Spanish using the language selection option.",
+    "Enter a query in Spanish.",
+    "Verify the chatbot responds correctly in Spanish.",
+    "Switch to a third language, such as French.",
+    "Enter a query in French.",
+    "Ensure the chatbot responds in French.",
+    "Check if language switching retains conversation history.",
+    "Log out from the application."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='/gptCLIForm' and contains(@class, 'nav-link')]",
+      "text": "RoostGPT Config",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt"
+    }
+  ],
+  "expected_results": [
+    "Chatbot responds accurately in all selected languages.",
+    "Language switch reflects immediately without page reload.",
+    "Conversation history is preserved across language switches."
+  ],
+  "edge_cases": [
+    "Unsupported language selected.",
+    "Partial translation of chatbot responses.",
+    "Loss of conversation history on language switch.",
+    "Incorrect language detected for entered query.",
+    "Failure to switch back to default language."
+  ],
+  "data_requirements": [
+    "OAuth credentials for login.",
+    "Queries in multiple languages.",
+    "Language selection feature implemented.",
+    "User account with multilingual support enabled.",
+    "Predefined responses for language verification."
+  ],
+  "dependencies": [
+    "Chatbot multilingual feature operational.",
+    "Language translation service available.",
+    "User account pre-setup with multilingual preferences."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "Language translation API",
+    "Chatbot interaction API for each language"
+  ],
+  "performance_metrics": [
+    "Language switch response time.",
+    "Chatbot response time in different languages."
+  ],
+  "accessibility_requirements": [
+    "Ensure language selection options are accessible via keyboard.",
+    "Verify screen reader compatibility across languages.",
+    "Check for correct language tags in HTML for each language."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "bb6f2d2f-7c95-4b1c-b397-c4ed5db7ba85",
+    "created_at": "2025-09-04T12:34:50.398560Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "error-handling",
+      "localization",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 60,
+    "flakiness_potential": "medium"
+  }
+}

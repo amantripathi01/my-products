@@ -1,0 +1,88 @@
+{
+  "test_name": "Check Feedback Mechanism on Chatbot Responses",
+  "description": "This scenario tests the functionality of providing feedback on chatbot responses and ensuring it affects future interactions.",
+  "type": "feedback",
+  "pages": [
+    "https://dev.roost.ai/roostgpt"
+  ],
+  "steps": [
+    "Navigate to https://dev.roost.ai/roostgpt.",
+    "Log in using any available OAuth option.",
+    "Initiate a conversation by asking a predefined question.",
+    "Receive a response from the chatbot.",
+    "Provide positive feedback on the response.",
+    "Ask a follow-up question related to the initial query.",
+    "Give negative feedback on the follow-up response.",
+    "Check if the chatbot adapts its response based on feedback.",
+    "Clear feedback and submit a new query.",
+    "Log out from the application."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='/gptCLIForm' and contains(@class, 'nav-link')]",
+      "text": "RoostGPT Config",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt"
+    }
+  ],
+  "expected_results": [
+    "Feedback submission works correctly.",
+    "Chatbot adapts responses based on feedback.",
+    "Feedback can be cleared and reset."
+  ],
+  "edge_cases": [
+    "Feedback submission failure.",
+    "No visible change in chatbot behavior after feedback.",
+    "Feedback given in unsupported format.",
+    "Incorrect feedback applied to unrelated queries.",
+    "Loss of feedback history after logout."
+  ],
+  "data_requirements": [
+    "OAuth credentials for login.",
+    "Predefined questions for feedback testing.",
+    "Feedback messages (positive and negative).",
+    "Mechanism for clearing feedback.",
+    "User account with feedback history enabled."
+  ],
+  "dependencies": [
+    "Feedback feature operational.",
+    "Chatbot capable of utilizing feedback.",
+    "User account with feedback capabilities enabled."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Feedback submission API",
+    "Chatbot interaction API"
+  ],
+  "performance_metrics": [
+    "Feedback submission time.",
+    "Impact of feedback on response time."
+  ],
+  "accessibility_requirements": [
+    "Ensure feedback options are accessible via keyboard.",
+    "Verify screen reader compatibility for feedback messages.",
+    "Check for appropriate feedback confirmation messages."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "c73ec4bf-88fa-4c15-892f-b419d3b7c595",
+    "created_at": "2025-09-04T12:34:50.398699Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "error-handling",
+      "feedback",
+      "form-submission",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 50,
+    "flakiness_potential": "medium"
+  }
+}

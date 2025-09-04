@@ -1,0 +1,97 @@
+{
+  "test_name": "Verify User Login and Chatbot Interaction via Google Auth",
+  "description": "This scenario tests the user's ability to log in through Google and interact with the chatbot, ensuring the chatbot responds accurately and promptly.",
+  "type": "authentication and chatbot interaction",
+  "pages": [
+    "https://dev.roost.ai/login",
+    "https://dev.roost.ai/roostgpt"
+  ],
+  "steps": [
+    "Navigate to https://dev.roost.ai/login.",
+    "Click on the 'Google' login button.",
+    "Authenticate using Google credentials.",
+    "Redirect to the main dashboard at https://dev.roost.ai/roostgpt.",
+    "Initiate a conversation by entering a query in the chatbot input field.",
+    "Wait for the chatbot response.",
+    "Review the response for relevance and accuracy.",
+    "Provide feedback on the response using the feedback option.",
+    "Attempt another inquiry with a different query.",
+    "Observe the chatbot's handling and response time.",
+    "If the response is unsatisfactory, escalate the query to a human agent.",
+    "Verify that the conversation history is visible and accurate.",
+    "Log out of the application using the logout option."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile%20openid&openid.realm&include_granted_scopes=true&response_type=token&client_id=985988082020-h5fipp07abkqn9qer08dtc6ve33dan9i.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'google')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is successfully authenticated via Google.",
+    "User lands on the main dashboard.",
+    "Chatbot interacts correctly with user queries.",
+    "Chatbot feedback mechanism works as expected.",
+    "Escalation to human support is available and functional.",
+    "All interactions are logged correctly."
+  ],
+  "edge_cases": [
+    "Network interruption during Google authentication.",
+    "Incorrect Google credentials entered.",
+    "Chatbot fails to respond to queries.",
+    "Feedback submission fails.",
+    "Escalation to human agent fails."
+  ],
+  "data_requirements": [
+    "Valid Google credentials.",
+    "Predefined queries for chatbot interaction.",
+    "Feedback message content.",
+    "Escalation reason for human support.",
+    "User account with conversation history."
+  ],
+  "dependencies": [
+    "Google authentication service available.",
+    "Chatbot service operational.",
+    "User account pre-setup with valid credentials."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "Google OAuth API",
+    "Chatbot interaction API",
+    "Feedback submission API"
+  ],
+  "performance_metrics": [
+    "Time taken for Google authentication.",
+    "Chatbot response time.",
+    "Feedback submission latency."
+  ],
+  "accessibility_requirements": [
+    "Ensure all clickable elements have aria-labels.",
+    "Verify screen reader compatibility for chatbot responses.",
+    "Check color contrast for text and interactive elements."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "c6b3ee1c-e653-494b-8b43-f6a7293aad57",
+    "created_at": "2025-09-04T12:34:50.398361Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "authentication and chatbot interaction",
+      "auto-generated",
+      "form-submission",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 65,
+    "flakiness_potential": "high"
+  }
+}
