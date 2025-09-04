@@ -1,0 +1,87 @@
+{
+  "test_name": "Verify User Can Login Via Google",
+  "description": "This test verifies that a user is able to successfully log in using Google authentication on the RoostGPT testing platform.",
+  "type": "authentication",
+  "pages": [
+    "https://dev.roost.ai/login",
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "Navigate to the login page at 'https://dev.roost.ai/login'.",
+    "Locate the Google login button using the stable selector.",
+    "Click the Google login button.",
+    "Verify that the Google authentication page is displayed.",
+    "Enter valid Google credentials.",
+    "Submit the Google authentication form.",
+    "Verify that the user is redirected to the main dashboard at 'https://dev.roost.ai/roostgpt/tests'.",
+    "Check that the user's profile information is displayed correctly on the dashboard.",
+    "Log out to complete the session."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile%20openid&openid.realm&include_granted_scopes=true&response_type=token&client_id=985988082020-h5fipp07abkqn9qer08dtc6ve33dan9i.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'google')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to the Google authentication page.",
+    "Successful login redirects the user to 'https://dev.roost.ai/roostgpt/tests'.",
+    "User's profile information is displayed on the dashboard."
+  ],
+  "edge_cases": [
+    "Invalid Google credentials are entered.",
+    "Network interruption during authentication.",
+    "Google account does not have a valid email.",
+    "Click on the Google login button multiple times rapidly.",
+    "User cancels the Google authentication process."
+  ],
+  "data_requirements": [
+    "Valid Google account credentials.",
+    "Access to the Google authentication server.",
+    "RoostGPT user account associated with the Google account.",
+    "Stable internet connection.",
+    "Access permissions for Google login."
+  ],
+  "dependencies": [
+    "Google authentication service is operational.",
+    "User's Google account is active.",
+    "Network connectivity is stable."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Google OAuth2 API for authentication."
+  ],
+  "performance_metrics": [
+    "Time taken to redirect to the dashboard after successful login."
+  ],
+  "accessibility_requirements": [
+    "Ensure login button is accessible via keyboard navigation.",
+    "Verify that the login process is screen-reader friendly."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "61adb7a3-09a0-4dc6-94e2-5c5e7609575f",
+    "created_at": "2025-09-04T13:17:46.288383Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "error-handling",
+      "file-upload",
+      "form-submission",
+      "keyboard-navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 45,
+    "flakiness_potential": "high"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "test_name": "Verify User Can Login Via Microsoft",
+  "description": "This scenario tests the ability to log in using Microsoft authentication and access the main dashboard of the RoostGPT platform.",
+  "type": "authentication",
+  "pages": [
+    "https://dev.roost.ai/login",
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "Navigate to 'https://dev.roost.ai/login'.",
+    "Locate the Microsoft login button using the stable selector.",
+    "Click the Microsoft login button.",
+    "Verify that the Microsoft authentication page is displayed.",
+    "Enter valid Microsoft account credentials.",
+    "Submit the authentication form.",
+    "Ensure that the user is redirected to the dashboard at 'https://dev.roost.ai/roostgpt/tests'.",
+    "Check that the user's profile information is correct on the dashboard.",
+    "Log out to end the session."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&scope=user.read&state=azure&client_id=946156a9-5142-4469-b79f-bdcc9e76cf7f&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'azure')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to the Microsoft authentication page.",
+    "Successful login redirects the user to 'https://dev.roost.ai/roostgpt/tests'.",
+    "User's profile information is displayed on the dashboard."
+  ],
+  "edge_cases": [
+    "Incorrect Microsoft credentials.",
+    "Microsoft service downtime.",
+    "User's account lacks necessary permissions.",
+    "Inconsistent internet connection.",
+    "User exits the authentication flow midway."
+  ],
+  "data_requirements": [
+    "Valid Microsoft account credentials.",
+    "Access to Microsoft authentication services.",
+    "Linked RoostGPT user account.",
+    "Stable internet connection.",
+    "Permissions for Microsoft login."
+  ],
+  "dependencies": [
+    "Microsoft authentication API is operational.",
+    "User's Microsoft account is active.",
+    "Network is stable."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Microsoft OAuth2 API for authentication."
+  ],
+  "performance_metrics": [
+    "Time to dashboard display post-login."
+  ],
+  "accessibility_requirements": [
+    "Ensure Microsoft login is keyboard accessible.",
+    "Verify screen-reader compatibility."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "013490eb-a779-41b2-86cc-b2f071460aa1",
+    "created_at": "2025-09-04T13:17:46.288383Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "file-upload",
+      "form-submission",
+      "keyboard-navigation",
+      "performance",
+      "security",
+      "ui-test"
+    ],
+    "estimated_execution_time": 45,
+    "flakiness_potential": "medium"
+  }
+}

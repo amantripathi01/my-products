@@ -1,0 +1,99 @@
+{
+  "test_name": "Verify Test Case Creation and Execution",
+  "description": "This scenario tests the entire flow of creating a new test case, executing it, and verifying the results on the RoostGPT platform.",
+  "type": "test_case_management",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "Navigate to the RoostGPT test dashboard.",
+    "Click on 'Create New Test Case' button.",
+    "Enter the test case name and description.",
+    "Select the application under test from the dropdown.",
+    "Add test steps by clicking 'Add Step' and filling in the details.",
+    "Save the test case.",
+    "Navigate back to the test case list.",
+    "Locate the newly created test case and click 'Execute'.",
+    "Select the environment for test execution.",
+    "Confirm execution by clicking 'Run Test'.",
+    "Monitor the test execution process for completion.",
+    "Upon completion, navigate to the test results section.",
+    "Review the test outcome and logs.",
+    "Check for any errors or failures in the execution.",
+    "Return to the test case list."
+  ],
+  "selectors": [
+    {
+      "element_type": "button",
+      "selector": "//a[@href='/gptCLIForm' and contains(@class, 'nav-link')]",
+      "text": "RoostGPT Config",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    }
+  ],
+  "expected_results": [
+    "Test case is created successfully.",
+    "Test executes without errors.",
+    "Results are displayed correctly with logs and error details if any."
+  ],
+  "edge_cases": [
+    "Test case creation fails due to missing mandatory fields.",
+    "Execution fails due to incorrect environment configuration.",
+    "Results page fails to load after execution.",
+    "Network issues during test execution.",
+    "Time out on long-running tests."
+  ],
+  "data_requirements": [
+    "Test case name and description.",
+    "Application configurations.",
+    "Environment settings for execution.",
+    "Steps and expected outcomes.",
+    "User credentials for login."
+  ],
+  "dependencies": [
+    "User must be logged in to the platform.",
+    "Application under test should be available.",
+    "Environment configurations should be set up.",
+    "Network connectivity must be stable.",
+    "User permissions to create and execute tests."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "Fetch application configurations.",
+    "Submit test case data.",
+    "Execute test on selected environment.",
+    "Retrieve test results."
+  ],
+  "performance_metrics": [
+    "Test case creation time.",
+    "Test execution time.",
+    "Result retrieval latency."
+  ],
+  "accessibility_requirements": [
+    "Ensure all form fields are accessible via keyboard.",
+    "Verify screen reader compatibility for test results.",
+    "Check color contrast ratios on the dashboard."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "a177e8d5-f2f9-44fe-b995-38965401f283",
+    "created_at": "2025-09-04T13:17:46.288383Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "drag-and-drop",
+      "error-handling",
+      "form-submission",
+      "network-resilience",
+      "performance",
+      "test_case_management",
+      "ui-test"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "high"
+  }
+}

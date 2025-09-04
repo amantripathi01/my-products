@@ -1,0 +1,91 @@
+{
+  "test_name": "Third-Party Authentication Verification",
+  "description": "This scenario tests user authentication through third-party services like Google, GitHub, and others.",
+  "type": "authentication",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "Navigate to the login page.",
+    "Click on the 'Login with Google' button.",
+    "Authenticate using Google credentials.",
+    "Verify redirection to the dashboard post-login.",
+    "Log out and return to the login page.",
+    "Click on the 'Login with GitHub' button.",
+    "Authenticate using GitHub credentials.",
+    "Verify redirection to the dashboard post-login.",
+    "Repeat steps for Azure, Okta, and other services.",
+    "Ensure each login method provides the correct user profile access."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile%20openid&openid.realm&include_granted_scopes=true&response_type=token&client_id=985988082020-h5fipp07abkqn9qer08dtc6ve33dan9i.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'google')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is authenticated through each service.",
+    "Dashboard is accessible post-login.",
+    "Correct user profile is loaded."
+  ],
+  "edge_cases": [
+    "Google login fails due to incorrect credentials.",
+    "GitHub service outage during login.",
+    "Azure redirection loop.",
+    "Okta authentication timeout.",
+    "Auth0 service returns unexpected error."
+  ],
+  "data_requirements": [
+    "Valid Google account credentials.",
+    "Valid GitHub account credentials.",
+    "Azure account with permissions.",
+    "Okta setup for the user.",
+    "Auth0 client configuration."
+  ],
+  "dependencies": [
+    "Third-party services must be operational.",
+    "User accounts exist on each service.",
+    "Correct client IDs and secrets configured.",
+    "User permissions set correctly.",
+    "Stable internet connection."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "OAuth token exchange.",
+    "User profile retrieval.",
+    "Session management API calls."
+  ],
+  "performance_metrics": [
+    "Authentication response time.",
+    "Redirection speed to the dashboard."
+  ],
+  "accessibility_requirements": [
+    "Ensure login buttons are accessible via keyboard.",
+    "Verify screen reader compatibility on login options.",
+    "Check for proper alt text on third-party logos."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "bf65bae1-c61b-45b1-838c-21ec773a98e8",
+    "created_at": "2025-09-04T13:17:46.288383Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "error-handling",
+      "file-upload",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 50,
+    "flakiness_potential": "high"
+  }
+}

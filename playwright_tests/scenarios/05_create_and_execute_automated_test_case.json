@@ -1,0 +1,162 @@
+{
+  "test_name": "Create and Execute Automated Test Case",
+  "description": "This scenario tests the user's ability to create a new automated test case, execute it, and verify the results on the platform.",
+  "type": "functional",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests",
+    "https://dev.roost.ai/gptCLIForm"
+  ],
+  "steps": [
+    "Navigate to the Roost GPT CLI Form page.",
+    "Enter a test name in the 'Test Name' input field.",
+    "Enter a valid OpenAI token in the 'Open AI Token' input field.",
+    "Click the 'Unmask Token' button to verify the token visibility.",
+    "Select 'Cloud Git' as the repository type using the radio button.",
+    "Enter a valid GitHub token in the 'GitHub Source Token' input field.",
+    "Click the 'Unmask GitHub Token' button.",
+    "Select all necessary test options such as 'Traverse to all sub-directories' and 'Check for Vulnerability' by interacting with respective labels.",
+    "Enter functions to test in the 'Functions to Test' input field.",
+    "Click the 'Download Env Config' button to download the configuration.",
+    "Navigate back to the Test Dashboard.",
+    "Click on the newly created test case from the list to open it.",
+    "Click the 'Run Test' button to execute the test.",
+    "Wait for the test execution to complete and check the results.",
+    "Review the test report generated after execution."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "[data-testid=\"test-name-input\"]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "input",
+      "selector": "[data-testid=\"openai-token\"]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid=\"openai-token-unMask-icon\"]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "input",
+      "selector": "[data-testid=\"cloud-git-type-radio-button-selected\"]",
+      "text": "",
+      "action": "check",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "input",
+      "selector": "[data-testid=\"github-source-token\"]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid=\"github-source-token-unMask-icon\"]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "label",
+      "selector": "//div[@id='advanced']/div[2]/div[4]/div[2]/div/div/label",
+      "text": "Traverse to all sub-directories",
+      "action": "check",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "label",
+      "selector": "//div[@id='advanced']/div[2]/div[5]/div[2]/div/div/label",
+      "text": "Check for Vulnerabilty",
+      "action": "check",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "input",
+      "selector": "[data-testid=\"functions-to-test\"]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "button",
+      "selector": "//button[contains(text(),'Download Env Config')]",
+      "text": "Download Env Config",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    }
+  ],
+  "expected_results": [
+    "User can successfully create a new test case with all necessary configurations.",
+    "Tokens are correctly unmasked and verified.",
+    "The environment configuration is downloaded successfully.",
+    "The test case executes without errors and results are displayed.",
+    "The test report accurately reflects the test execution."
+  ],
+  "edge_cases": [
+    "Entering an invalid OpenAI token and verifying error handling.",
+    "Attempting to unmask a token when it's not entered.",
+    "Selecting both repository types and checking the system response.",
+    "Running a test case without selecting any functions to test.",
+    "Downloading the environment configuration without completing all fields."
+  ],
+  "data_requirements": [
+    "Valid OpenAI API token.",
+    "Valid GitHub access token.",
+    "Test case name that adheres to naming conventions.",
+    "Functions to test in the application.",
+    "Configuration details for environment setup."
+  ],
+  "dependencies": [
+    "User must be logged in to access the test creation page.",
+    "The user must have valid API tokens for OpenAI and GitHub.",
+    "The application should have the necessary permissions to access the GitHub repository."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "API calls to OpenAI for token verification.",
+    "GitHub API interactions for repository access.",
+    "Internal API calls for executing the test case and retrieving results."
+  ],
+  "performance_metrics": [
+    "Test case creation time.",
+    "Test execution time.",
+    "Time taken to download environment configuration."
+  ],
+  "accessibility_requirements": [
+    "All form fields should be accessible via keyboard navigation.",
+    "Screen readers should announce the labels correctly.",
+    "Color contrast should meet WCAG 2.1 AA standards."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "3c82e1a9-02bd-439c-aca2-5cb863ca8ef2",
+    "created_at": "2025-09-04T13:17:46.288383Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "error-handling",
+      "file-download",
+      "form-submission",
+      "functional",
+      "performance",
+      "security",
+      "ui-test"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}

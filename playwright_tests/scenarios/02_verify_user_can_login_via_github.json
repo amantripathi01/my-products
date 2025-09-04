@@ -1,0 +1,89 @@
+{
+  "test_name": "Verify User Can Login Via GitHub",
+  "description": "This test ensures that a user can log in through GitHub authentication and access the main dashboard of the RoostGPT platform.",
+  "type": "authentication",
+  "pages": [
+    "https://dev.roost.ai/login",
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "Open the login page at 'https://dev.roost.ai/login'.",
+    "Identify the GitHub login option using the stable selector.",
+    "Click the GitHub login button.",
+    "Verify the GitHub authentication page appears.",
+    "Enter valid GitHub credentials.",
+    "Submit the GitHub authentication.",
+    "Check if the user is redirected to 'https://dev.roost.ai/roostgpt/tests'.",
+    "Verify the user's profile information on the dashboard.",
+    "Log out from the session."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://github.com/login/oauth/authorize?scope=user%3Aemail&client_id=0fc11ea1f52d5e2a8dcf&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'git')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is directed to the GitHub authentication page.",
+    "Successful login redirects the user to 'https://dev.roost.ai/roostgpt/tests'.",
+    "User's profile data is visible on the dashboard."
+  ],
+  "edge_cases": [
+    "User enters incorrect GitHub credentials.",
+    "GitHub service outage during login.",
+    "User's GitHub account lacks required permissions.",
+    "Simultaneous login attempts from different browsers.",
+    "Session timeout during the GitHub authentication process."
+  ],
+  "data_requirements": [
+    "Valid GitHub account credentials.",
+    "Access to GitHub authentication services.",
+    "Associated RoostGPT user account.",
+    "Stable internet connection.",
+    "Permissions for GitHub login."
+  ],
+  "dependencies": [
+    "GitHub authentication API is functional.",
+    "User's GitHub account is active.",
+    "Network connection is stable."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "GitHub OAuth API for authentication."
+  ],
+  "performance_metrics": [
+    "Login response time from GitHub."
+  ],
+  "accessibility_requirements": [
+    "Ensure GitHub login is accessible via keyboard.",
+    "Check for screen-reader compatibility during login."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "99a09d35-f172-4149-bf45-5d816d7ab352",
+    "created_at": "2025-09-04T13:17:46.288383Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "concurrency",
+      "cross-browser",
+      "file-upload",
+      "form-submission",
+      "keyboard-navigation",
+      "network-resilience",
+      "performance",
+      "security",
+      "ui-test"
+    ],
+    "estimated_execution_time": 45,
+    "flakiness_potential": "high"
+  }
+}
