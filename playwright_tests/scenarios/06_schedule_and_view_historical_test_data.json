@@ -1,0 +1,98 @@
+{
+  "test_name": "Schedule and View Historical Test Data",
+  "description": "This scenario tests the ability to schedule a test case to run at a specific time and view the historical data for trend analysis.",
+  "type": "functional",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "Navigate to the primary application dashboard.",
+    "Select an existing test case from the list.",
+    "Click the 'Schedule Test' button to open the scheduling options.",
+    "Set a specific date and time for the test execution.",
+    "Save the schedule and confirm scheduling details.",
+    "Once scheduled, wait for the test to execute at the specified time.",
+    "After test execution, navigate to the 'Historical Data' section.",
+    "Filter the historical data by date range to view specific records.",
+    "Review the test results and analyze trends or anomalies.",
+    "Export the historical data to a CSV file for reporting."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='/gptCLIForm' and contains(@class, 'nav-link')]",
+      "text": "RoostGPT Config",
+      "action": "navigate",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    },
+    {
+      "element_type": "button",
+      "selector": "//button[contains(text(),'Schedule Test')]",
+      "text": "Schedule Test",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    }
+  ],
+  "expected_results": [
+    "Test case is scheduled and executed at the specified time.",
+    "Historical data is accurately recorded and can be filtered.",
+    "User can analyze trends and export data for reporting."
+  ],
+  "edge_cases": [
+    "Scheduling a test case with a past date/time.",
+    "Attempting to schedule a test without selecting a test case.",
+    "Filtering historical data with an invalid date range.",
+    "Exporting historical data when no records are available.",
+    "Network issues interrupting the scheduling or data retrieval."
+  ],
+  "data_requirements": [
+    "Valid user account with access to test scheduling.",
+    "Existing test case available for scheduling.",
+    "Correct date and time format for scheduling.",
+    "Data range for historical data filtering.",
+    "CSV export functionality for data reporting."
+  ],
+  "dependencies": [
+    "User must have permission to schedule tests.",
+    "Test cases must be pre-existing in the system.",
+    "The system must accurately track and store historical data."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Internal API for scheduling test executions.",
+    "API calls to retrieve historical test data.",
+    "Export functionality to generate CSV reports."
+  ],
+  "performance_metrics": [
+    "Time taken to schedule a test.",
+    "Accuracy and speed of historical data retrieval.",
+    "CSV export generation time."
+  ],
+  "accessibility_requirements": [
+    "Scheduling form should be accessible via keyboard.",
+    "Date and time picker should be usable by screen readers.",
+    "Filter controls for historical data should be accessible."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "558848f1-9966-44e3-836d-cc5131f85e6b",
+    "created_at": "2025-09-04T13:17:46.288383Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "error-handling",
+      "file-upload",
+      "form-submission",
+      "functional",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 50,
+    "flakiness_potential": "high"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "test_name": "Schedule and Manage Automated Test Executions",
+  "description": "This scenario verifies the ability to schedule automated test executions and manage them effectively on the platform.",
+  "type": "test_execution_management",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "Navigate to the RoostGPT Test Dashboard.",
+    "Locate the scheduling section for test executions.",
+    "Select a test case for scheduling.",
+    "Choose a future date and time for the test execution.",
+    "Set up any necessary execution parameters.",
+    "Confirm and save the scheduled execution.",
+    "Verify the scheduled execution appears in the list.",
+    "Wait for the scheduled time and monitor the execution process.",
+    "Check the execution status and results once the test is completed.",
+    "Review any errors or issues reported during the execution.",
+    "Access historical execution data to compare results.",
+    "Log out of the platform."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='#tag/RoostGPT/operation/TestGptController_getAllTestPlan' and contains(@class, 'sc-jlZhew')]",
+      "text": "tag/RoostGPT/operation/TestGptController_getAllTestPlan",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    }
+  ],
+  "expected_results": [
+    "Test execution is scheduled successfully.",
+    "Scheduled test runs at the specified time.",
+    "Execution status and results are available post-execution.",
+    "Historical data includes the latest scheduled execution."
+  ],
+  "edge_cases": [
+    "Scheduling conflicts with existing tests.",
+    "Network issues prevent execution at scheduled time.",
+    "Incorrect execution parameters lead to failed tests.",
+    "Permissions issues prevent test execution.",
+    "System downtime affects scheduled tasks."
+  ],
+  "data_requirements": [
+    "Test case details for scheduling.",
+    "Execution environment parameters.",
+    "Schedule date and time.",
+    "User permissions for scheduling.",
+    "Access to historical execution data."
+  ],
+  "dependencies": [
+    "Test environment must be set up and available.",
+    "User must have scheduling permissions.",
+    "Network and system stability during execution."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Monitor API calls for scheduling test executions.",
+    "Log execution results and status updates.",
+    "Check API responses for execution confirmation."
+  ],
+  "performance_metrics": [
+    "Measure time taken to schedule a test execution.",
+    "Evaluate system responsiveness during execution monitoring.",
+    "Analyze load times for historical data retrieval."
+  ],
+  "accessibility_requirements": [
+    "Ensure scheduling interface is keyboard accessible.",
+    "Verify screen readers announce scheduled executions.",
+    "Check for color contrast in scheduling section UI."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "55a0cbc4-7014-4e18-925d-dece34b5649a",
+    "created_at": "2025-09-04T13:17:46.289393Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "error-handling",
+      "form-submission",
+      "network-resilience",
+      "performance",
+      "security",
+      "test_execution_management",
+      "ui-test"
+    ],
+    "estimated_execution_time": 60,
+    "flakiness_potential": "high"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "test_name": "Download and Validate OpenAPI Specification",
+  "description": "This scenario tests the ability to download the OpenAPI specification and ensure it is correctly formatted for offline review.",
+  "type": "documentation_management",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "Navigate to the RoostGPT Test Dashboard.",
+    "Locate the 'API docs by Redocly' link and click it.",
+    "On the API documentation page, find the 'Download' button.",
+    "Click the 'Download' button to initiate the OpenAPI specification download.",
+    "Verify the download is successful and the file is saved locally.",
+    "Open the downloaded OpenAPI specification file.",
+    "Validate the JSON/YAML format of the downloaded specification.",
+    "Check for any syntax errors or formatting issues.",
+    "Use an OpenAPI viewer/editor to open the file and ensure it is structured correctly.",
+    "Review the endpoints and operations listed in the specification.",
+    "Verify that the downloaded specification matches the current live API documentation.",
+    "Log out of the platform."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//div[@id='redoc-container']/div/div[1]/div[2]/div[1]/a",
+      "text": "API docs by Redocly",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://dev.roost.ai/api/swagger-json' and contains(@class, 'sc-ktJbId')]",
+      "text": "Download",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    }
+  ],
+  "expected_results": [
+    "OpenAPI specification is downloaded successfully.",
+    "Downloaded file is free of syntax errors.",
+    "Specification matches the current API documentation."
+  ],
+  "edge_cases": [
+    "Network interruption during download.",
+    "File is corrupted or incomplete after download.",
+    "Specification format is not recognized by editors.",
+    "Mismatch between downloaded and live API documentation.",
+    "Incorrect file permissions preventing download."
+  ],
+  "data_requirements": [
+    "Access to the internet for download.",
+    "Disk space to save the specification file.",
+    "OpenAPI viewer/editor software.",
+    "Access to current API documentation for comparison.",
+    "File permissions for download directory."
+  ],
+  "dependencies": [
+    "User must have download permissions.",
+    "Correct URL for downloading specification.",
+    "OpenAPI viewer/editor installed on local machine."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Monitor download request for the OpenAPI specification.",
+    "Validate response headers and content type of the download.",
+    "Check for any API call errors during the download process."
+  ],
+  "performance_metrics": [
+    "Measure download time for the OpenAPI specification.",
+    "Evaluate the time taken to open and parse the specification.",
+    "Check for responsiveness of the API documentation page."
+  ],
+  "accessibility_requirements": [
+    "Ensure download button is accessible via keyboard.",
+    "Verify screen readers announce download progress.",
+    "Check color contrast for download link and buttons."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "78160912-1a41-48bf-8f73-4c9ab3556f87",
+    "created_at": "2025-09-04T13:17:46.289393Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "data-validation",
+      "documentation_management",
+      "error-handling",
+      "file-download",
+      "file-upload",
+      "form-submission",
+      "network-resilience",
+      "performance",
+      "security",
+      "ui-test"
+    ],
+    "estimated_execution_time": 60,
+    "flakiness_potential": "high"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "test_name": "Review and Analyze Test Reports",
+  "description": "This scenario focuses on the analysis of test reports to identify issues within the application.",
+  "type": "report_analysis",
+  "pages": [
+    "https://dev.roost.ai/roostgpt/tests"
+  ],
+  "steps": [
+    "Log into the RoostGPT platform.",
+    "Navigate to the test reports section.",
+    "Select a recent test run from the reports list.",
+    "Review the summary of the test results.",
+    "Access detailed logs for failed test steps.",
+    "Identify patterns or recurring issues in the logs.",
+    "Export the report to a CSV or PDF format.",
+    "Share the report with the development team.",
+    "Schedule a meeting to discuss findings.",
+    "Log any new issues discovered during analysis."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='/gptCLIForm' and contains(@class, 'nav-link')]",
+      "text": "RoostGPT Config",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    }
+  ],
+  "expected_results": [
+    "Test reports are accessible and detailed.",
+    "Issues are identified and logged effectively.",
+    "Reports can be exported in multiple formats."
+  ],
+  "edge_cases": [
+    "Corrupt report files.",
+    "Incomplete log data.",
+    "Export function fails.",
+    "Incorrect report filtering.",
+    "Missing test run data."
+  ],
+  "data_requirements": [
+    "Access to historical test data.",
+    "Previous test run logs.",
+    "User permissions to view reports.",
+    "CSV or PDF export capabilities.",
+    "Communication channel for sharing reports."
+  ],
+  "dependencies": [
+    "Test runs must have been executed.",
+    "Reports generated for recent test runs.",
+    "Access to the reporting module.",
+    "Permission to export and share reports.",
+    "Development team available for collaboration."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "Fetch report data.",
+    "Export report functionality.",
+    "Log issue through API."
+  ],
+  "performance_metrics": [
+    "Report generation time.",
+    "Export operation speed."
+  ],
+  "accessibility_requirements": [
+    "Ensure report tables are accessible.",
+    "Verify screen reader compatibility for logs.",
+    "Check for color contrast in report visuals."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "887e595b-ebe6-409f-822d-ab09eceb57f7",
+    "created_at": "2025-09-04T13:17:46.289393Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "file-upload",
+      "form-submission",
+      "performance",
+      "report_analysis",
+      "ui-test"
+    ],
+    "estimated_execution_time": 50,
+    "flakiness_potential": "medium"
+  }
+}
