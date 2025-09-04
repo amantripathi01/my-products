@@ -1,38 +1,66 @@
-# My-Products
+# Playwright Test Suite
 
-A sample JAVA SpringBoot application that uses Java Persistence API to implement CRUD operations. 
+## RoostGpt Generated playwright test
 
-## Getting Started
+This project contains Playwright-based automated tests located in the `playwright_tests` directory.
 
-To launch the app:
+## 📁 Directory Structure
 
-### Using Local Run
+```bash
+ playwright_tests/
+   ├── scenarios/
+   ├── tests/
+   ├── package.json
+   ├── playwright.config.js
+```
 
-Right click on the [ProductionApplications.java](https://github.com/akshatjain04/my-products/blob/main/src/main/java/com/bootexample4/products/ProductsApplication.java) file, and click on `Run Java`.
+## 🧩 Prerequisites
 
-### Using Dockerfile
+Make sure you have the following installed:
 
-1. Build the docker image in the base directory:
-     `docker build -t my-products:1.0 .`
-2. Run the image:
-     `docker run -d -p 8080:8080 my-products:1.0`
+- [Node.js](https://nodejs.org/) (version 18 or higher recommended)
+- npm (comes with Node.js)
 
-In both the cases, the app must be accessible at http://localhost:8080/
+## 📦 Setup
 
-## What the app does
+1. Navigate to the Playwright tests directory:
 
-A product has following properties:
+2. Install dependencies:
 
-- id  (primary key for table)
-- name
-- description
-- price
+   ```bash
+   npm install
+   ```
 
-The app supports CRUD (Create, Read, Update, Delete) operations
+## 🚀 Running Tests
 
-- [GET] Get the list of all products: `/api/products/` (This is the only api that is accessible through browser. Rest all can only be accessed from a testing tool, e.g. postman)
-- [POST] Add a product: `/api/products/` request body:`{ name: string, price: float, description: string }`
-- [GET] Get the product of a particulatr id: `/api/products/{id}`
-- [PUT] Update a particular product by id: `/api/products/{id}` Request body: `{ name: string, price: float, description: string }`
-- [DELETE] delete a particualr product by id: `/api/products/{id}`
+To execute all Playwright tests:
 
+```bash
+npx playwright test
+```
+
+You can also run a specific test file:
+
+```bash
+npx playwright test tests/example.spec.js
+```
+
+> Replace `example.spec.js` with the actual test file you want to run.
+
+## 📂 Test Reports
+
+After the tests run, Playwright will generate a report. To view the report:
+
+```bash
+npx playwright show-report
+```
+
+## ⚙️ Configuration
+
+Test configuration is defined in `playwright.config.js`.
+
+You can modify settings like test directory, timeout etc., in this file.
+
+## 📘 More Info
+
+For detailed Playwright documentation, visit: [https://playwright.dev](https://playwright.dev)
