@@ -1,0 +1,145 @@
+{
+  "test_name": "Verify User Addition to Project via Admin Interface",
+  "description": "This test verifies the process of adding a user to a project using the admin interface, ensuring correct navigation, input actions, and successful user addition.",
+  "type": "user_management",
+  "pages": [
+    "https://dev.roost.ai/login",
+    "https://dev-53854943.okta.com/",
+    "https://dev.roost.ai/roostgpt/tests",
+    "https://dev.roost.ai/admin/app"
+  ],
+  "steps": [
+    "Visit the login page at dev.roost.ai.",
+    "Verify navigation to the login page.",
+    "Click on the 'okta' link to initiate authentication.",
+    "Verify navigation to the Okta login page.",
+    "Enter 'Playwright@zb.io' in the email field.",
+    "Enter 'Roost#123' in the password field.",
+    "Click 'Sign In' to submit credentials.",
+    "Verify successful login and navigation to the dashboard page.",
+    "Click on the 'Admin' tab to access admin features.",
+    "Verify navigation to the admin section.",
+    "Click on 'Add Roosters' to open the user addition interface.",
+    "Enter 'playwright' in the invite field.",
+    "Select 'playwright' from the dropdown list.",
+    "Click 'Add to <project_name>' to complete the process.",
+    "Verify that the user is added successfully."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "html > body > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div > div > div > ul > li:nth-of-type(4) > a.okta[href=\"https://dev-53854943.okta.com/oauth2/default/v1/authorize?response_type=code&scope=openid%20profile%20email%20address&state=okta&client_id=0oa3x8katznHWlHeD5d7&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin\"][target=\"_self\"]",
+      "text": "okta",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    },
+    {
+      "element_type": "input",
+      "selector": "html > body > div:nth-of-type(2) > div > main > div:nth-of-type(2) > div > div > form > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span > input[type=\"text\"][placeholder][name=\"username\"][id=\"okta-signin-username\"][aria-label][autocomplete=\"username\"][required]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev-53854943.okta.com/signin/refresh-auth-state/007K38PV5NadoRr7Kp8yxu3-sowJ0s3lR-soHLzO7f"
+    },
+    {
+      "element_type": "input",
+      "selector": "html > body > div:nth-of-type(2) > div > main > div:nth-of-type(2) > div > div > form > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > span > input[type=\"password\"][placeholder][name=\"password\"][id=\"okta-signin-password\"][aria-label][autocomplete=\"current-password\"][required]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev-53854943.okta.com/signin/refresh-auth-state/007K38PV5NadoRr7Kp8yxu3-sowJ0s3lR-soHLzO7f"
+    },
+    {
+      "element_type": "input",
+      "selector": "html > body > div:nth-of-type(2) > div > main > div:nth-of-type(2) > div > div > form > div:nth-of-type(2) > input.button.button-primary[type=\"submit\"][id=\"okta-signin-submit\"]",
+      "text": "Sign In",
+      "action": "click",
+      "url_on_page": "https://dev-53854943.okta.com/signin/refresh-auth-state/007K38PV5NadoRr7Kp8yxu3-sowJ0s3lR-soHLzO7f"
+    },
+    {
+      "element_type": "a",
+      "selector": "html > body > div:nth-of-type(1) > div:nth-of-type(2) > header > div > nav > div:nth-of-type(2) > div > ul > li:nth-of-type(2) > a.nav-link[data-testid=\"admin-tab\"][href=\"/admin/app\"]",
+      "text": "Admin",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/roostgpt/tests"
+    },
+    {
+      "element_type": "Add Roosters",
+      "selector": "html > body > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
+      "text": "Add Roosters",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/admin/app"
+    },
+    {
+      "element_type": "input",
+      "selector": "html > body > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div:nth-of-type(1) > div > div:nth-of-type(2) > div > input[id=\"inviteMemberDropdown\"][type=\"text\"][placeholder=\"Search for Roosters (min 3 chars) ...\"][autocomplete=\"off\"]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/admin/app"
+    },
+    {
+      "element_type": "div",
+      "selector": "html > body > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div",
+      "text": "playwright",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/admin/app"
+    },
+    {
+      "element_type": "Add to zbio",
+      "selector": "html > body > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div:nth-of-type(4) > div > div:nth-of-type(2)",
+      "text": "Add to <project_name>",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/admin/app"
+    }
+  ],
+  "expected_results": [
+    "User successfully navigates through login and admin pages without errors.",
+    "User 'playwright' is added to the specified project in the admin interface."
+  ],
+  "edge_cases": [
+    "Invalid email or password results in login failure.",
+    "User already exists in the project, resulting in an error message."
+  ],
+  "data_requirements": [
+    "Valid user credentials: 'Playwright@zb.io', 'Roost#123'.",
+    "Existing project name for user addition."
+  ],
+  "dependencies": [
+    "Network connectivity to access external authentication services.",
+    "User account with admin privileges."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "Monitor authentication API calls for login validation.",
+    "Check user management API for user addition."
+  ],
+  "performance_metrics": [
+    "Time taken to navigate between pages and perform actions.",
+    "Response time of API calls during authentication and user addition."
+  ],
+  "accessibility_requirements": [
+    "Ensure all interactive elements are accessible via keyboard.",
+    "Verify text fields have appropriate labels for screen readers."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "1503806b-83bc-4dfa-836e-0cc657aa731d",
+    "created_at": "2025-09-05T06:25:23.895225Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "drag-and-drop",
+      "error-handling",
+      "form-submission",
+      "keyboard-navigation",
+      "performance",
+      "ui-test",
+      "user_management"
+    ],
+    "estimated_execution_time": 75,
+    "flakiness_potential": "medium"
+  }
+}
